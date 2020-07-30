@@ -1,0 +1,22 @@
+GET http://localhost:3000/api/teddies
+
+###
+GET http://localhost:3000/api/teddies/5be9c8541c9d440000665243
+
+###
+POST http://localhost:3000/api/teddies/order
+Content-Type: application/json
+
+{
+    "contact": {
+        "firstName": "Alex",
+        "lastName": "Gasior",
+        "address": "40000",
+        "city": "mont-de-marsan",
+        "email": "123@test.com"
+    },
+    "products": [
+        "5be9c8541c9d440000665243",
+        "5be9c8541c9d440000665243"
+    ]
+}

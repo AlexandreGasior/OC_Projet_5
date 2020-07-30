@@ -1,0 +1,6 @@
+/* TEXT LINEAR GRADIENT */
+@mixin linear-gradient($color1, $color2) {
+    background: -webkit-linear-gradient(315deg, $color1, $color2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
