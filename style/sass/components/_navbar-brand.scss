@@ -1,0 +1,7 @@
+.navbar-brand {
+    font-family: 'Belligerent-Madness', serif;
+    font-size: 2.5rem;
+    i {
+        @include linear-gradient($secondary, $info);
+    }
+}

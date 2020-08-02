@@ -1,15 +1,7 @@
+@import "./utils/variables_overrides";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss"; /* boostrap call after variables_overides */
 @import "./utils/variables";
 @import "./utils/mixins";
 @import "./base/typography";
-
-.bg-navbar {
-    background-color: $color-primary;
-}
-
-.navbar-brand {
-    font-family: 'Belligerent-Madness', serif;
-    font-size: 2.5rem;
-    i {
-        @include linear-gradient($color-secondary, $color-third);
-    }
-}
+@import "./components/navbar-brand";
+@import "./components/footer-link";
