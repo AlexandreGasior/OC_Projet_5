@@ -1,4 +1,8 @@
 a.footer-link {
-    font-size: 1.5rem;
-    color: black;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.5);
+    &:hover {
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.7);
+    }
 }
