@@ -31,18 +31,21 @@ fetch(`http://localhost:3000/api/teddies/${urlId}`)
         // Listen "add to basket" button to add 1 in the quantity of the selected item
         const selectAddToBasketButton = document.getElementById('add-to-basket');
         selectAddToBasketButton.addEventListener('click', function () {
-            const myBasket = localStorage.getItem('myBasket');
-            addToBasket(myBasket, teddy);
+            addToBasket(teddy);
         });
     });
 
-function addToBasket(myBasket, teddy) {
-    if (myBasket) { // if basket already exist add teddy to it
-        let arrayInMyBasket = JSON.parse(myBasket);
-        arrayInMyBasket.push(teddy._id);
-        localStorage.setItem('myBasket', JSON.stringify(arrayInMyBasket));
+function addToBasket(newTeddy) {
+    let myBasket = JSON.parse(localStorage.getItem('myBasket')) || [];  // If myBasket already exist recover it else create an array
+    let alreadyInTheBasket = false;
+    myBasket.forEach(teddy => { // Compare id of newTeddy with teddies alrady in myBasket and if it already exist increase quantity by 1
+        if (teddy._id === newTeddy._id) {
+            teddy.quantity += 1;
+            alreadyInTheBasket = true;
+        }
+    });
+    if (!alreadyInTheBasket) {
+        myBasket.push({ _id: newTeddy._id, name: newTeddy.name, price: newTeddy.price, imageUrl: newTeddy.imageUrl, quantity: 1 });
     }
-    else {  // else the basket is created and the teddy added to it
-        localStorage.setItem('myBasket', JSON.stringify([teddy._id]));
-    };
+    localStorage.setItem('myBasket', JSON.stringify(myBasket));
 }
