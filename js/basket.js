@@ -13,7 +13,7 @@ if (myBasket) { // if it contains items diplay them
                 <th scope="col">Quantité</th>
                 <th scope="col">Image</th>
                 <th scope="col">Nom de l'article</th>
-                <th scope="col">Prix</th>
+                <th scope="col">Prix/u</th>
             </tr>
         </thead>
         <tbody>
@@ -28,7 +28,7 @@ if (myBasket) { // if it contains items diplay them
                 <th scope="row"><i class="fas fa-minus text-info basket-icon"></i> <span class="quantity">${teddy.quantity}</span> <i class="fas fa-plus text-info basket-icon"></i></th>
                 <td class="w-25"><img src="${teddy.imageUrl}" class="img-fluid img-thumbnail"></td>
                 <td>${teddy.name}</td>
-                <td>${(teddy.price / 100) * teddy.quantity} €</td>
+                <td>${(teddy.price / 100)} €</td>
             </tr>
             `
     });
