@@ -25,7 +25,7 @@ if (myBasket) { // if it contains items diplay them
         totalPrice += teddy.price * teddy.quantity / 100
         selectTbody.innerHTML += `
             <tr id="${teddy._id}">
-                <th scope="row"><i class="fas fa-minus text-info"></i> <span class="quantity">${teddy.quantity}</span> <i class="fas fa-plus text-info"></i></th>
+                <th scope="row"><i class="fas fa-minus text-info basket-icon"></i> <span class="quantity">${teddy.quantity}</span> <i class="fas fa-plus text-info basket-icon"></i></th>
                 <td class="w-25"><img src="${teddy.imageUrl}" class="img-fluid img-thumbnail"></td>
                 <td>${teddy.name}</td>
                 <td>${(teddy.price / 100) * teddy.quantity} €</td>
